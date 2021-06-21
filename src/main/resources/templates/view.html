@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reaction Tester</title>
+    <style type="text/css">
+       #shape {
+       height: 50px;
+        width: 50px;
+        background-color: #bbb;
+        border-radius: 50%;
+        position:relative;
+        display:none;
+       }
+    </style>
+</head>
+<body>
+<center>
+ <h1>Welcome to Reaction Tester!</h1>
+  <h3>How fast can you click on a shape that randomly appears on the screen?</h3>
+    <h4>Time Taken:&nbsp;<span id="time"></span></h4>
+<div id="shape" onclick="disappear()"></div>
+</center>
+<script type="text/javascript">
+    var startTime;
+    function getColor(){
+        var arr = '123456789ABCDEF'.split('');
+        var start = '#';
+        for(let i=0;i<6;i++){
+            start += arr[Math.floor(Math.random()*16)];
+        }
+        return start;
+    }
+    function properties(){
+    var color = getColor();
+    var top = Math.random()*300;
+    var left = Math.random()*450;
+    var width = (Math.random()*300)+50;
+    if(Math.random()>=0.5){
+    document.getElementById("shape").style.borderRadius = "0%";
+    }
+    else {
+    document.getElementById("shape").style.borderRadius = "50%";
+    }
+    document.getElementById("shape").style.backgroundColor = color;
+    document.getElementById("shape").style.top = top + "px";
+    document.getElementById("shape").style.left = left + "px";
+    document.getElementById("shape").style.width = width + "px";
+    document.getElementById("shape").style.height = width + "px";
+    document.getElementById("shape").style.display = "block";
+    startTime = new Date().getTime();
+    }
+    function displayInterval(){
+        setTimeout(properties,Math.random()*250);
+    }
+    displayInterval();
+    function disappear(){
+     document.getElementById("shape").style.display = "none";
+     var stopTime = new Date().getTime();
+     var timeTaken = (stopTime - startTime) / 1000;
+      document.getElementById("time").innerHTML = timeTaken + " seconds";
+      displayInterval();
+    }
+</script>
+</body>
+</html>
