@@ -9,3 +9,4 @@ Tools and technologies used:
 - Spring Boot and Spring Mvc
 - An embedded Tomcat Server to self-host the application
 - HTML, JavaScript and CSS which can be founder the resources directory in a file called view.html 
+- Maven to automate the project build process.
