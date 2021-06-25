@@ -12,12 +12,11 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.runner.RunWith;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
-import static java.util.Arrays.asList;
-import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 public class StoryConfiguration extends JUnitStories {
+
+
 
     @Override
     public Configuration configuration() {
@@ -31,7 +30,15 @@ public class StoryConfiguration extends JUnitStories {
 
     @Override
     public List<String> storyPaths() {
-        String codeLoc = codeLocationFromClass(this.getClass()).getFile();
-        return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()).getFile(), "**/test.story" ,"");
+        return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()).getFile(), "**/story_configuration.story" ,"");
+    }
+    @Override
+    @Test
+    public void run() {
+        try {
+            super.run();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 }
