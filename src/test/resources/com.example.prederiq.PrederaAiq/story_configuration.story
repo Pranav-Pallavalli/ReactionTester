@@ -3,7 +3,6 @@ Given An authorised URL
 When A GET req is made
 Then 200 status code is returned
 And application type is json
-And output same as that in documentation
 
 Scenario:Testing an unauthorised URL
 Given Unauthorised link

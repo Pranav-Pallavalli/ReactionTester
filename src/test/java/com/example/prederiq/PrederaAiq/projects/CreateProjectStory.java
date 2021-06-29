@@ -1,5 +1,6 @@
-package com.example.prederiq.PrederaAiq;
+package com.example.prederiq.PrederaAiq.projects;
 
+import com.example.prederiq.PrederaAiq.PrederaAiqApplicationTests;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.io.CodeLocations;
@@ -9,12 +10,11 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
-import org.junit.runner.RunWith;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class StoryConfiguration extends JUnitStories {
+public class CreateProjectStory  extends JUnitStories {
 
 
 
@@ -32,7 +32,7 @@ public class StoryConfiguration extends JUnitStories {
     @Override
     @Test
     public List<String> storyPaths() {
-        return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()).getFile(), "**/*_projects_story.story" ,"");
+        return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()).getFile(), "**/create_project_story.story" ,"");
     }
     @Override
     @Test
@@ -44,3 +44,4 @@ public class StoryConfiguration extends JUnitStories {
         }
     }
 }
+
