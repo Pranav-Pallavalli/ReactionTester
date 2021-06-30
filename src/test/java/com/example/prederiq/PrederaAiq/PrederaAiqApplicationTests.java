@@ -43,7 +43,7 @@ public class PrederaAiqApplicationTests {
 	CloseableHttpClient httpClient = HttpClients.createDefault();
 	String auth = "Bearer " + "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJkZWEzYWQ2YS1iNDQ1LTQ1MzYtOThhMy1mYmU1MmEzMjEyYTIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNDYzMzY1MywiZXhwIjoxNjI0NjM3MjUzLCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjQ2MzM2NTMsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.GD6UCKRVvoj6N7rsG6wB6vi6v6kgGeDOBqD1ARo_-xOYxKocNZ7EV6ZOVYFc6s0VFE4mkETCp41Gj_YJJD0JKYMwqkoAnYQQi9rzC9mb2XDrRKEMaNTkXYXyNzIAvD2Q6MhMd5lOWvgYoV5j7itbMQXntzRKHC_jx4O83PgLaqP9YoNevgIW3I10I-dnX50HzQrWsi4ChqJfM9OCcUs0skW94waMZNJSciObLfE7kxg76mgQwycTHbRrgwVrgHIuE1JbuUfztBmetRJrPpNgkNg_TzmbGoCBEaGCvN6taYeCd0ityaYPT-lxsPcjB0c7twjXSevy7qp48FJ4U7gqEA";
 	JSONArray array;
-	JSONObject object;
+	JSONObject object = new JSONObject();
 	HttpUriRequest httpUriRequest;
 
 	@Given("An authorised URL")
@@ -98,7 +98,7 @@ public class PrederaAiqApplicationTests {
 
 	//Tests for GET ID
 	//And Get Summary;
-	String auth2 = "Bearer "+ "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiI1ZTgzODllNC1hMmVkLTQ5NWQtOWM3MS0wY2JkYjc1YTQ3N2UiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNDkyNjU3MiwiZXhwIjoxNjI0OTMwMTcyLCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjQ5MjY1NzIsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.eZ97EXeyuxRTSCeQAIYJ83IU8FVY7Yt7noPHB_cT5fE6FQSJGGcwKcyFUbaYfUS43ksyVGz5xfVRrvm7dXlOrAQ1AjhlDneOsv1fddU6UEZZMeHx8G5SkpS4_KOIphC741eTOhlLruk1KCYaw7XgMVjv53FkJmItwgVRvjwoaH2xALf3XFnqaD_1Ipb4_EbiOKvx6OJ443mBjWIcyxH0ryKOJDht4ZMTVd1Z9tKu1eMcr39db3kZBf0Ou7Ls1GmgzvZcCUT8DE6csky2QR3zwUKhKCYjl-GtQTOD8hAQVnbNgnzLS7SyuFaZiESZJtGvnDNKTJ7H2r8S54fF7-Mu4A";
+	String auth2 = "Bearer "+ "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJkZTU1ZGIzMC1hZTViLTRkYmItYTgwYS0xNzZhYTNhOTNmNWIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNTAwNjkxNiwiZXhwIjoxNjI1MDEwNTE2LCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjUwMDY5MTYsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.CJGB84yFWWAQaTDf8-9xMsYc0dnifeAZcXGvTzbGZ5vaX8It3KyY0z9-ov-eJTUUbex6wp3SX0467QeDtjo8e6KbLKiMq_dPh_JysS9cJcUvexO8PDAwd_9n2WMxpSIJbWUkFHmPm3xil_bj2EulV6xMwAoLMS6Zj9k0pXBeAz0i_fX_VAcwkk7vkNQR4oMHpj-ckRflIP_m6cWGMq68KAPS-_yM2D8Och67Rgn0ewOAgCo4hbdBHvbFXAgSIJrjpAgBB5xUjnti-mAuonRdHM_tXG1B2Ib3HYFmXnnSfrn1x_Ax73odkT1DTMuulTc9ufsL70PeRx5vdJaULXEgYg";
 	@Given("the <Url> to test")
 	public void testUrl(@Named("Url")String Url){
 		uri = Url;
@@ -157,9 +157,54 @@ public class PrederaAiqApplicationTests {
 		}
 		httpUriRequest.abort();
 	}
+
+	//args/count API content and content type tests
+	String auth6 = "Bearer "+"eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJkZTU1ZGIzMC1hZTViLTRkYmItYTgwYS0xNzZhYTNhOTNmNWIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNTAwNjkxNiwiZXhwIjoxNjI1MDEwNTE2LCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjUwMDY5MTYsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.CJGB84yFWWAQaTDf8-9xMsYc0dnifeAZcXGvTzbGZ5vaX8It3KyY0z9-ov-eJTUUbex6wp3SX0467QeDtjo8e6KbLKiMq_dPh_JysS9cJcUvexO8PDAwd_9n2WMxpSIJbWUkFHmPm3xil_bj2EulV6xMwAoLMS6Zj9k0pXBeAz0i_fX_VAcwkk7vkNQR4oMHpj-ckRflIP_m6cWGMq68KAPS-_yM2D8Och67Rgn0ewOAgCo4hbdBHvbFXAgSIJrjpAgBB5xUjnti-mAuonRdHM_tXG1B2Ib3HYFmXnnSfrn1x_Ax73odkT1DTMuulTc9ufsL70PeRx5vdJaULXEgYg";
+	int count = 0;
+
+	@Given("The arg/count api URI <URI>")
+	public void test9(@Named("URI")String URI){
+		uri = URI;
+	}
+	@When("It is called using get req")
+	public void getget() throws IOException {
+		if (count==0){
+			count++;
+			httpUriRequest = RequestBuilder.get().setUri(uri).setHeader(HttpHeaders.AUTHORIZATION,auth6).build();
+		}
+		else {
+			JSONObject temp = new JSONObject();
+			JSONArray tempArr = new JSONArray();
+			String projectName = "project-"+String.valueOf(0)+String.valueOf(count);
+			temp.put("name",projectName);
+			temp.put("description","Test");
+			temp.put("users",tempArr);
+			System.out.println("entered");
+			httpUriRequest = RequestBuilder.post("https://sandbox.predera.com/aiq/api/projects").setHeader(HttpHeaders.CONTENT_TYPE,"application/json").addHeader(HttpHeaders.AUTHORIZATION,auth4).setEntity(new StringEntity(temp.toString())).build();
+			httpClient.execute(httpUriRequest);
+			httpUriRequest.abort();
+			count++;
+			httpUriRequest = RequestBuilder.get().setUri(uri).addHeader(HttpHeaders.AUTHORIZATION,auth6).build();
+		}
+	}
+	@Then("application type is <type> and body is <contentt> as in documentation")
+	public void cont(@Named("type")String type,@Named("contentt")String content) throws IOException, ParseException {
+		HttpResponse response = httpClient.execute(httpUriRequest);
+		String contentType = String.valueOf(response.getEntity().getContentType());
+		String str = "";
+		Scanner scanner = new Scanner(response.getEntity().getContent());
+		while (scanner.hasNext()){
+			str += scanner.nextLine();
+		}
+		scanner.close();
+		JSONParser parser = new JSONParser();
+		object = (JSONObject) parser.parse(str);
+		Assert.assertEquals(content,object.toString());
+		httpUriRequest.abort();
+	}
 	//Testing the POST API
 
-	String auth4 = "Bearer " + "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJhZjVhYTIwNi1hNzI0LTQ1YjQtYTA4Mi0wNjE5MzdlNzhlOWQiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNDkyMjc0OCwiZXhwIjoxNjI0OTI2MzQ4LCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjQ5MjI3NDgsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.HkV9BorwAQE_OpHnPcD0kUNrPMiJd3fcIPmRZJ87ZkB9k3cujgFS73DvB9QloEvZJHYzQehwB74429KfippV6dS56geq-JdgctSX5f3QOsXq4k1zvrnaP0WaaP7_fzSe2VBp9Zwt_js0jYS6QE3F1r1fcy-JIJlpy5vknKjbxLqjvl6E12EFK2iEhxb3GnYbXnFWGjEymGi9lY_0elD_huhJ2KaIKjMuZXlt5ESHCDNloeGagrOAoO9EWjNMul38lS8KD2ZhRNoFnuNGzmj5HtRY7I-ZfOkQ2jIGr7-E0N2p1EIjuc9OMzPZrbki8Day6oIy-G66TMcQCP4HxsBOLg";
+	String auth4 = "Bearer " + "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJkZTU1ZGIzMC1hZTViLTRkYmItYTgwYS0xNzZhYTNhOTNmNWIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNTAwNjkxNiwiZXhwIjoxNjI1MDEwNTE2LCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjUwMDY5MTYsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.CJGB84yFWWAQaTDf8-9xMsYc0dnifeAZcXGvTzbGZ5vaX8It3KyY0z9-ov-eJTUUbex6wp3SX0467QeDtjo8e6KbLKiMq_dPh_JysS9cJcUvexO8PDAwd_9n2WMxpSIJbWUkFHmPm3xil_bj2EulV6xMwAoLMS6Zj9k0pXBeAz0i_fX_VAcwkk7vkNQR4oMHpj-ckRflIP_m6cWGMq68KAPS-_yM2D8Och67Rgn0ewOAgCo4hbdBHvbFXAgSIJrjpAgBB5xUjnti-mAuonRdHM_tXG1B2Ib3HYFmXnnSfrn1x_Ax73odkT1DTMuulTc9ufsL70PeRx5vdJaULXEgYg";
 	JSONArray arr = new JSONArray();
 	JSONObject obj = new JSONObject();
 	@Given("the URL <URI> to which the post request is to be made")
@@ -226,5 +271,87 @@ public class PrederaAiqApplicationTests {
 		JSONParser parser = new JSONParser();
 		JSONObject temp = (JSONObject) parser.parse(content);
 		Assert.assertEquals("{\"owner\":\"ppallavalli@umass.edu\",\"name\":\"project-020\",\"description\":\"Sample for Test\",\"last_modified_date\":\"2021-06-29T00:15:10.936Z\",\"id\":\"a-941079110\",\"created_date\":\"2021-06-29T00:15:10.936Z\",\"last_modified_by\":\"ppallavalli@umass.edu\",\"created_by\":\"ppallavalli@umass.edu\",\"users\":[]}",temp.toString());
+	}
+	String auth5 = "Bearer "+"eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiJiMzY0N2EyMC0zYTY2LTQ0YzYtOGY1Ny1kNTI2MGMwZjRmNDIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNDk4NTkzMSwiZXhwIjoxNjI0OTg5NTMxLCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjQ5ODU5MzEsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.JBFTcgJ_k2fmSsd7EbF0P3Zs59FaPthbSeRHnwbrgu9euyVrDACS2PqxEgl6xgU3FDUP0ptLoKdYrosiJYFwMyH22J7Qm264qtwqgBU-1gA7kr0kuJzYjgwlCysFkDoZvd3RrulkqtvQQBdgT9jexC1YL0gErckPJqwdFauzDXYkZTdDUoYY_8MtcDf9Td5v9flujNC1teaG22pOYnj1MtjlOXlmD51zO1KQCuf_-3JKBaY40VuJHpgTQKD-n2Pp6ZT5KjekqGvfRbsXbDfbHd2YBSWjHoKdXPglyG4VkrqBDIqVP-YmdmoThYPz_8Tjod0zQge-oaVi_KRIY-17Tw";
+	@Given("the URI <URI> to which the delete request is to be made")
+	public void testUrl5(@Named("URI")String URI){
+		uri = URI;
+	}
+	@When("Delete request is made based on whether authorization is <autho>")
+	public void delete(@Named("autho")boolean autho){
+		if(autho) {
+			httpUriRequest = RequestBuilder.delete().setUri(uri).setHeader(HttpHeaders.AUTHORIZATION, auth5).build();
+		}
+		else {
+			httpUriRequest = RequestBuilder.delete().setUri(uri).build();
+		}
+	}
+	@Then("Status code returned will be <status>")
+	public void sc6(@Named("status")int status) throws IOException {
+		HttpResponse response = httpClient.execute(httpUriRequest);
+		int status1 = response.getStatusLine().getStatusCode();
+		Assert.assertEquals(status,status1);
+		httpUriRequest.abort();
+	}
+
+	//Testing the PUT command by seeing if the parameter which is modified in the body is also modified in the response of the API
+	String auth7 = "Bearer " + "eyJraWQiOiJndE1YKzh2bVBaNnk0NElmdllGNDZqVDlvRG5RZWxoeUg4d1JjMVwvWkdBND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMGNhZjMyYy0zY2Q0LTQyNzAtYmQ4NC1kOWI4N2Q1NGIyZjAiLCJjdXN0b206dGllciI6IlN0YW5kYXJkIFRpZXIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl8zTVkyM3BMM0YiLCJjb2duaXRvOnVzZXJuYW1lIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1IiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDU4ZWFjMTM4YzIyMjQ5ZjA5MTA1MDA1Mzk2MGNmMzZhIiwiZ2l2ZW5fbmFtZSI6IlByYW5hdiIsImF1ZCI6IjZibjZrNTk0cmxubXRyamZpYXMxdjQwMGhmIiwiZXZlbnRfaWQiOiIxYTVmMWViOC03OGQ0LTRhMGItOWI4ZS1hOTQzOTU1NjllMmIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyNTA5MjM5NCwiZXhwIjoxNjI1MDk1OTk0LCJjdXN0b206cm9sZSI6IlRlbmFudFVzZXIiLCJpYXQiOjE2MjUwOTIzOTUsImZhbWlseV9uYW1lIjoiUGFsbGF2YWxsaSIsImVtYWlsIjoicHBhbGxhdmFsbGlAdW1hc3MuZWR1In0.chKdOFixoRnflkaa8Oar7I0zbUX8IriVGMm0xObyFyPhvbVqcZynL3EPgLMTLnIvpuPj47-1ivdKAO3271kqe1Km7ZoZWhm_77KWDb8-t7_Yic5I35xe32d7kalYRJNTrf6wjPmFkqYDrf60mw6N52o2k6IOEFv159sGLv_PzWFRRMqzim8btnW-3MHVeGzhLWv_bwFhZxv3srOCZHPXV44046VLALxgTXo5A3vw16mkTuTbVbx05dj9iXBkuiRZb95DPKpsEi3wqqFDO0mD-InhCyOVFwmY5PAqA_zMj2NtUnCnvPpBbeRTfN8ZKE1MMMYvoEzu-tVzQtNpcc5jaQ";
+	@Given("The URI <URI> to which the update req is to be made")
+	public void testUrl7(@Named("URI")String URI){
+		uri = URI;
+	}
+	@When("The put req is made where the key <key> and value <value> are modified and passed in as the body")
+	public void put(@Named("key")String key,@Named("value")String value) throws IOException, ParseException {
+		httpUriRequest = RequestBuilder.get().setUri(uri).addHeader(HttpHeaders.AUTHORIZATION,auth7).build();
+		HttpResponse response = httpClient.execute(httpUriRequest);
+		String str = "";
+		Scanner scanner = new Scanner(response.getEntity().getContent());
+		while (scanner.hasNext()){
+			str+=scanner.nextLine();
+		}
+		scanner.close();
+		JSONParser parser = new JSONParser();
+		JSONArray temparr1 = (JSONArray)parser.parse(str);
+		JSONObject jsonObject = (JSONObject) temparr1.get(0);
+		String id = jsonObject.getAsString("id");
+		String name = jsonObject.getAsString("name");
+		String description = jsonObject.getAsString("description");
+		String owners = jsonObject.getAsString("owner");
+		JSONArray jsonArray = (JSONArray)jsonObject.get("users");
+		httpUriRequest.abort();
+		object.clear();
+		object.put("id",id);
+		object.put("name",name);
+		object.put("description",description);
+		object.put("owner",owners);
+		object.put("users",jsonArray);
+		if(key.equals("users")){
+			jsonArray.add(value);
+			object.put("users",jsonArray);
+		} else {
+			object.put(key,value);
+		}
+		httpUriRequest = RequestBuilder.put(uri).setHeader(HttpHeaders.CONTENT_TYPE,"application/json").addHeader(HttpHeaders.AUTHORIZATION,auth7).setEntity(new StringEntity(object.toString())).build();
+	}
+	@Then("status code is <status> and the the parameter <param> is updated as expected <expected>")
+	public void putTest(@Named("status")int status,@Named("param") String param,@Named("expected")String value) throws IOException, ParseException {
+		HttpResponse response = httpClient.execute(httpUriRequest);
+		Assert.assertEquals(status,response.getStatusLine().getStatusCode());
+		String str = "";
+		Scanner scanner = new Scanner(response.getEntity().getContent());
+		while (scanner.hasNext()){
+			str += scanner.nextLine();
+		}
+		scanner.close();
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) parser.parse(str);
+		if(!param.equals("users")) {
+			Assert.assertEquals(value, jsonObject.get(param));
+		} else {
+			JSONArray jsonArr2 = (JSONArray) jsonObject.get("users");
+			String jsonObject2 = (String) jsonArr2.get(0);
+			Assert.assertEquals(value,jsonObject2.toString());
+		}
+		httpUriRequest.abort();
 	}
 }
